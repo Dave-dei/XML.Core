@@ -6,3 +6,4 @@ Actualmente funciona para los siguientes tipos de comprobantes:
 1. Nomina
 2. ServiciosPlataformasTecnologicas
 3. Archivos visual studio .csproj del cual se toma información como dependencias contendidas, nugets y archivos config. 
+4. Se agrega mapeo de de archivos xsd. 
