@@ -1,0 +1,1185 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="AD">
+    <xs:annotation>
+      <xs:documentation>Estandar de Addenda.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ADP" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation>Nodo para introducir la información detallada de un bien o servicio amparado en la addenda.</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:attribute name="NúmeroDePréstamo" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para indicar el número de préstamo
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:minLength value="1"/>
+                  <xs:maxLength value="254" />
+                  <xs:pattern value="([A-Z]|[a-z]|[0-9]| |Ñ|ñ|!|&quot;|%|&amp;|&apos;|´|-|.|:|;|&gt;|=|&lt;|@|_|,|\{|\}|`|~|á|é|í|ó|ú|Á|É|Í|Ó|Ú|ü|Ü)*" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="Descripcion" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para indicar el tipo de préstamo
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:minLength value="1"/>
+                  <xs:maxLength value="254" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="Moneda" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para indicar la moneda
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:minLength value="1"/>
+                  <xs:maxLength value="254" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="NoDePagos" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para mostrar el número de pagos
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:minLength value="1"/>
+                  <xs:maxLength value="254" />
+                  <xs:pattern value="([A-Z]|[a-z]|[0-9]| |Ñ|ñ|!|&quot;|%|&amp;|&apos;|´|-|.|:|;|&gt;|=|&lt;|@|_|,|\{|\}|`|~|á|é|í|ó|ú|Á|É|Í|Ó|Ú|ü|Ü)*" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="FechaInicio" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para expresar la fecha de inicio del préstamo
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:pattern value="\d{2}[/]\d{2}[/]\d{4}"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="FechaVencimiento" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para expresar la fecha de vencimiento del préstamo
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:pattern value="\d{2}[/]\d{2}[/]\d{4}"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="Capital" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para expresar el monto original de la transacción
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:fractionDigits value="6" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="InteresesDevengados" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para mostrar los intereses que generaron durante el periódo
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:fractionDigits value="6" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="FechaProximoPago" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para expresar la fecha de vencimiento del préstamo
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:pattern value="\d{2}[/]\d{2}[/]\d{4}"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="CapitalAPagar" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para indicar el capital que se deberá pagar en la fecha indicada
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:fractionDigits value="6" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="InteresAPagar" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para indicar el interés que se deberá pagar en la fecha indicada
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:fractionDigits value="6" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="CAT" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional que nos indique el CAT que aplica
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:minLength value="1"/>
+                  <xs:maxLength value="254" />
+                  <xs:pattern value="([A-Z]|[a-z]|[0-9]| |Ñ|ñ|!|&quot;|%|&amp;|&apos;|´|-|.|:|;|&gt;|=|&lt;|@|_|,|\{|\}|`|~|á|é|í|ó|ú|Á|É|Í|Ó|Ú|ü|Ü)*" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="TasaDeInteres" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional que nos indique el status del préstamo
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:minLength value="1"/>
+                  <xs:maxLength value="254" />
+                  <xs:pattern value="([A-Z]|[a-z]|[0-9]| |Ñ|ñ|!|&quot;|%|&amp;|&apos;|´|-|.|:|;|&gt;|=|&lt;|@|_|,|\{|\}|`|~|á|é|í|ó|ú|Á|É|Í|Ó|Ú|ü|Ü)*" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="TasaDeInteresMoratorio" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para indicar la tasa de interes moratoria
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:minLength value="1"/>
+                  <xs:maxLength value="254" />
+                  <xs:pattern value="([A-Z]|[a-z]|[0-9]| |Ñ|ñ|!|&quot;|%|&amp;|&apos;|´|-|.|:|;|&gt;|=|&lt;|@|_|,|\{|\}|`|~|á|é|í|ó|ú|Á|É|Í|Ó|Ú|ü|Ü)*" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ADC" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation>Nodo para introducir la información detallada de un bien o servicio amparado en la addenda.</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:attribute name="Cuenta" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para indicar el número de cuenta de la chequera
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:minLength value="1"/>
+                  <xs:maxLength value="254" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="Moneda" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para indicar la moneda de la cuenta de cheques
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:minLength value="1"/>
+                  <xs:maxLength value="254" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="SaldoAnterior" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para indicar el saldo al inicio del periódo
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:fractionDigits value="6" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="SaldoAlCorte" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para indicar el saldo al final del periódo
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:fractionDigits value="6" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="SaldoPromedio" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para indicar el saldo promedio de la chequera del cliente
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:fractionDigits value="6" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ADD" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation>Nodo para introducir la información detallada de un bien o servicio amparado en la addenda.</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:attribute name="Cuenta" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para definir el número de cuenta del cliente
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:minLength value="1"/>
+                  <xs:maxLength value="254" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="Moneda" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para indicar la moneda de los time deposits
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:minLength value="1"/>
+                  <xs:maxLength value="254" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="SaldoAnterior" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para indicar el saldo al inicio del periódo
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:fractionDigits value="6" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="Depositos" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para indicar el total de depósitos que hubo durante el mes
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:fractionDigits value="6" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="Retiros" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para indicar el total de retiros que hubo durante el mes
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:fractionDigits value="6" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="SaldoAlCorte" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para indicar el saldo al final del periódo
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:fractionDigits value="6" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="SaldoPromedio" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para indicar el saldo promedio de la chequera del cliente
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:fractionDigits value="6" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="InteresesBrutos" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para indicar los intereses ganados por el cliente
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:fractionDigits value="6" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="ISRRetenido" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atrubuto opcional para indicar el ISR retenido al cliente
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:fractionDigits value="6" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="InteresesNetos" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para indicar el interés neto del cliente
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:fractionDigits value="6" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="GATNominal" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para indicar el GAT nominal
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:fractionDigits value="6" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="GATReal" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para indicar el GAT real
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:fractionDigits value="6" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="AMC" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation>Nodo para introducir la información detallada de un bien o servicio amparado en la addenda.</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:attribute name="Cuenta" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para definir el número de cuenta del cliente
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:minLength value="1"/>
+                  <xs:maxLength value="254" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="Moneda" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para indicar la moneda de la cuenta de cheques
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:minLength value="1"/>
+                  <xs:maxLength value="254" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="Fecha" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para expresar la fecha de los movimientos
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:pattern value="\d{2}[/]\d{2}[/]\d{4}"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="Folio" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para indentificar los movimientos de la chequera
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:minLength value="1"/>
+                  <xs:maxLength value="254" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="Descripcion" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para indicar la descripción de los movimientos
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:minLength value="1"/>
+                  <xs:maxLength value="254" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="Depositos" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para indicar el total de depósitos que hubo durante el mes
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:fractionDigits value="6" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="Retiros" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para indicar el total de retiros que hubo durante el mes
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:fractionDigits value="6" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="Saldo" use="optional">
+              <xs:annotation>
+                <xs:documentation>Atributo opcional para indicar el saldo después de cada movimiento</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:fractionDigits value="6" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="AMCT" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation>Nodo para introducir la información detallada de un bien o servicio amparado en la addenda.</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:attribute name="TotalDepositos" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para indicar la suma total de depósitos durante el mes
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:fractionDigits value="6" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="TotalRetiros" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para indicar la suma total de retiros durante el mes
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:fractionDigits value="6" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="TotalSaldos" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para indicar la suma total de los saldos
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:fractionDigits value="6" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="AMD" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation>Nodo para introducir la información detallada de un bien o servicio amparado en la addenda.</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:attribute name="Cuenta" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para definir el número de cuenta del cliente
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:minLength value="1"/>
+                  <xs:maxLength value="254" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="Moneda" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para indicar la moneda de los time deposits
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:minLength value="1"/>
+                  <xs:maxLength value="254" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="Fecha" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para expresar la fecha de los movimientos
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:pattern value="\d{2}[/]\d{2}[/]\d{4}"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="Folio" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para indentificar los movimientos de los depósitos
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:minLength value="1"/>
+                  <xs:maxLength value="254" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="Descripcion" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para indicar la descripción de los movimientos
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:minLength value="1"/>
+                  <xs:maxLength value="254" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="Depositos" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para indicar el total de depósitos que hubo durante el mes
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:fractionDigits value="6" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="Retiros" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para indicar el total de retiros que hubo durante el mes
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:fractionDigits value="6" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="Saldo" use="optional">
+              <xs:annotation>
+                <xs:documentation>Atributo opcional para indicar el saldo después de cada movimiento</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:fractionDigits value="6" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="AMDT" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation>Nodo para introducir la información detallada de un bien o servicio amparado en la addenda.</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:attribute name="TotalDepositos" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para indicar la suma total de depósitos durante el mes
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:fractionDigits value="6" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="TotalRetiros" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para indicar la suma total de retiros durante el mes
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:fractionDigits value="6" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="TotalSaldos" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para indicar la suma total de los saldos
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:fractionDigits value="6" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ACO" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation>Nodo para introducir la información detallada de un bien o servicio amparado en la addenda.</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:attribute name="Comisiones" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para expresar el monto de las comisiones
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:minLength value="1"/>
+                  <xs:maxLength value="254" />
+                  <xs:pattern value="([A-Z]|[a-z]|[0-9]| |Ñ|ñ|!|&quot;|%|&amp;|&apos;|´|-|.|:|;|&gt;|=|&lt;|@|_|,|\{|\}|`|~|á|é|í|ó|ú|Á|É|Í|Ó|Ú|ü|Ü)*" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="IVAComisiones" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para expresar el monto del IVA de las comisiones
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:minLength value="1"/>
+                  <xs:maxLength value="254" />
+                  <xs:pattern value="([A-Z]|[a-z]|[0-9]| |Ñ|ñ|!|&quot;|%|&amp;|&apos;|´|-|.|:|;|&gt;|=|&lt;|@|_|,|\{|\}|`|~|á|é|í|ó|ú|Á|É|Í|Ó|Ú|ü|Ü)*" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="TotalComisiones" use="optional">
+              <xs:annotation>
+                <xs:documentation>
+                  Atributo opcional para expresar el monto Total de las comisiones
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:minLength value="1"/>
+                  <xs:maxLength value="254" />
+                  <xs:pattern value="([A-Z]|[a-z]|[0-9]| |Ñ|ñ|!|&quot;|%|&amp;|&apos;|´|-|.|:|;|&gt;|=|&lt;|@|_|,|\{|\}|`|~|á|é|í|ó|ú|Á|É|Í|Ó|Ú|ü|Ü)*" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="NombreDeLaInstitucion" use="optional">
+        <xs:annotation>
+          <xs:documentation>Atributo opcional para expresar el nombre del Banco</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+            <xs:minLength value="1"/>
+            <xs:maxLength value="254" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="NombreDeLaEmpresa" use="optional">
+        <xs:annotation>
+          <xs:documentation>
+            Atributo opcional para expresar el nombre del cliente
+          </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+            <xs:minLength value="1"/>
+            <xs:maxLength value="254" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="CalleCliente" use="optional">
+        <xs:annotation>
+          <xs:documentation>
+            Atributo opcional para expresar la calle del domicilio fiscal del cliente
+          </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+            <xs:minLength value="1"/>
+            <xs:maxLength value="254" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="NumeroExteriorCliente" use="optional">
+        <xs:annotation>
+          <xs:documentation>
+            Atributo opcional para expresar el número exterior del domicilio fiscal del cliente
+          </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+            <xs:minLength value="1"/>
+            <xs:maxLength value="254" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="NumeroInteriorCliente" use="optional">
+        <xs:annotation>
+          <xs:documentation>
+            Atributo opcional para expresar el número interior del domicilio fiscal del cliente
+          </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+            <xs:minLength value="1"/>
+            <xs:maxLength value="254" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="ColoniaCliente" use="optional">
+        <xs:annotation>
+          <xs:documentation>
+            Atributo opcional para expresar la colonia del domicilio fiscal del cliente
+          </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+            <xs:minLength value="1"/>
+            <xs:maxLength value="254" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="DelegacionOMunicipioCliente" use="optional">
+        <xs:annotation>
+          <xs:documentation>
+            Atributo opcional para expresar la delegación/municipio colonia del domicilio fiscal del cliente
+          </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+            <xs:minLength value="1"/>
+            <xs:maxLength value="254" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="CodigoPostalCliente" use="optional">
+        <xs:annotation>
+          <xs:documentation>
+            Atributo opcional para indicar el CP del cliente
+          </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+            <xs:minLength value="1"/>
+            <xs:maxLength value="254" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="EstadoCliente" use="optional">
+        <xs:annotation>
+          <xs:documentation>
+            Atributo opcional para indicar el estado donde se localiza el cliente
+          </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+            <xs:minLength value="1"/>
+            <xs:maxLength value="254" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="NumeroDeClienteOContrato" use="optional">
+        <xs:annotation>
+          <xs:documentation>
+            Atributo opcional para indicar el numero del cliente / contrato, con el cual, el banco identifica a cada cliente
+          </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+            <xs:minLength value="1"/>
+            <xs:maxLength value="254" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="RFCCliente" use="optional">
+        <xs:annotation>
+          <xs:documentation>
+            Atributo opcional que debe de indicar el RFC del cliente
+          </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+            <xs:minLength value="1"/>
+            <xs:maxLength value="254" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="TelefonoCliente" use="optional">
+        <xs:annotation>
+          <xs:documentation>
+            Atribito opcional para indicar el teléfono tel cliente
+          </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+            <xs:minLength value="1"/>
+            <xs:maxLength value="254" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="EmailCliente" use="optional">
+        <xs:annotation>
+          <xs:documentation>
+            Atributo opcional que debe indicar el correo electónico del cliente, a dihc adireccion de correo se le enviará el estado de cuenta / factura
+          </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+            <xs:minLength value="1"/>
+            <xs:maxLength value="254" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="Periodo" use="optional">
+        <xs:annotation>
+          <xs:documentation>
+            Atributo opcional para expresar el periodo que corresponden los datos
+          </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+            <xs:minLength value="1"/>
+            <xs:maxLength value="254" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="Moneda" use="optional">
+        <xs:annotation>
+          <xs:documentation>
+            Atributo opcional para indicar la moneda
+          </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+            <xs:minLength value="1"/>
+            <xs:maxLength value="254" />
+            <xs:pattern value="([A-Z]|[a-z]|[0-9]| |Ñ|ñ|!|&quot;|%|&amp;|&apos;|´|-|.|:|;|&gt;|=|&lt;|@|_|,|\{|\}|`|~|á|é|í|ó|ú|Á|É|Í|Ó|Ú|ü|Ü)*" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="NombreDelBanco" use="optional">
+        <xs:annotation>
+          <xs:documentation>
+            Atributo opcional para indicar el nombre del Banco
+          </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+            <xs:minLength value="1"/>
+            <xs:maxLength value="254" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="RFCBanco" use="optional">
+        <xs:annotation>
+          <xs:documentation>
+            Atributo opcional para expresar el RFC del Banco
+          </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+            <xs:minLength value="1"/>
+            <xs:maxLength value="254" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="CalleBanco" use="optional">
+        <xs:annotation>
+          <xs:documentation>
+            Atributo opcional para expresar la calle del domicilio fiscal del banco
+          </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+            <xs:minLength value="1"/>
+            <xs:maxLength value="254" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="NumeroExteriorBanco" use="optional">
+        <xs:annotation>
+          <xs:documentation>
+            Atributo opcional para expresar el número exterior del domicilio fiscal del banco
+          </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+            <xs:minLength value="1"/>
+            <xs:maxLength value="254" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="NumeroInterior" use="optional">
+        <xs:annotation>
+          <xs:documentation>
+            Atributo opcional para expresar el número interior del domicilio fiscal del banco
+          </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+            <xs:minLength value="1"/>
+            <xs:maxLength value="254" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="ColoniaBanco" use="optional">
+        <xs:annotation>
+          <xs:documentation>
+            Atributo opcional para expresar la colonia del domicilio fiscal del banco
+          </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+            <xs:minLength value="1"/>
+            <xs:maxLength value="254" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="CodigoPostalBanco" use="optional">
+        <xs:annotation>
+          <xs:documentation>
+            Atributo opcional para indicar el CP del banco
+          </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+            <xs:minLength value="1"/>
+            <xs:maxLength value="254" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="DelegacionOMunicipioBanco" use="optional">
+        <xs:annotation>
+          <xs:documentation>
+            Atributo opcional para expresar la delegación/municipio colonia del domicilio fiscal del banco
+          </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+            <xs:minLength value="1"/>
+            <xs:maxLength value="254" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="EstadoBanco" use="optional">
+        <xs:annotation>
+          <xs:documentation>
+            Atributo opcional para indicar el estado donde se localiza el banco
+          </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+            <xs:minLength value="1"/>
+            <xs:maxLength value="254" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="IPAB" use="optional">
+        <xs:annotation>
+          <xs:documentation>
+            Atributo opcional para expresar la pag de internet del IPAB
+          </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+            <xs:minLength value="1"/>
+            <xs:maxLength value="254" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="CONDUSEF" use="optional">
+        <xs:annotation>
+          <xs:documentation>
+            Atributo opcional para expresar la pag de internet de la CONDUSEF
+          </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+            <xs:minLength value="1"/>
+            <xs:maxLength value="254" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

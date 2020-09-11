@@ -1,0 +1,7 @@
+C:\MYTFS\Dave.Nuget\Main\XML.Core\bin\Debug\net48\XML.Core.dll
+C:\MYTFS\Dave.Nuget\Main\XML.Core\bin\Debug\net48\XML.Core.pdb
+C:\MYTFS\Dave.Nuget\Main\XML.Core\obj\Debug\net48\XML.Core.AssemblyInfoInputs.cache
+C:\MYTFS\Dave.Nuget\Main\XML.Core\obj\Debug\net48\XML.Core.AssemblyInfo.cs
+C:\MYTFS\Dave.Nuget\Main\XML.Core\obj\Debug\net48\XML.Core.csproj.CoreCompileInputs.cache
+C:\MYTFS\Dave.Nuget\Main\XML.Core\obj\Debug\net48\XML.Core.dll
+C:\MYTFS\Dave.Nuget\Main\XML.Core\obj\Debug\net48\XML.Core.pdb

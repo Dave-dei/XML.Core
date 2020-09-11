@@ -1,0 +1,8 @@
+C:\Nuget\netstandard2.1\XML.Core.deps.json
+C:\Nuget\netstandard2.1\XML.Core.dll
+C:\Nuget\netstandard2.1\XML.Core.pdb
+C:\MYTFS\Dave.Nuget\Main\XML.Core\obj\Debug\netstandard2.1\XML.Core.AssemblyInfoInputs.cache
+C:\MYTFS\Dave.Nuget\Main\XML.Core\obj\Debug\netstandard2.1\XML.Core.AssemblyInfo.cs
+C:\MYTFS\Dave.Nuget\Main\XML.Core\obj\Debug\netstandard2.1\XML.Core.csproj.CoreCompileInputs.cache
+C:\MYTFS\Dave.Nuget\Main\XML.Core\obj\Debug\netstandard2.1\XML.Core.dll
+C:\MYTFS\Dave.Nuget\Main\XML.Core\obj\Debug\netstandard2.1\XML.Core.pdb

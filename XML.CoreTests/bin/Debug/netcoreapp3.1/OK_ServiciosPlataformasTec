@@ -1,0 +1,31 @@
+<retenciones:Retenciones xmlns:plataformasTecnologicas="http://www.sat.gob.mx/esquemas/retencionpago/1/PlataformasTecnologicas10" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sat.gob.mx/esquemas/retencionpago/1 http://www.sat.gob.mx/esquemas/retencionpago/1/retencionpagov1.xsd http://www.sat.gob.mx/esquemas/retencionpago/1/PlataformasTecnologicas10 http://www.sat.gob.mx/esquemas/retencionpago/1/PlataformasTecnologicas10/PlataformasTecnologicas10.xsd" Version="1.0" FolioInt="CR" Sello="agnj7ytBmuRDp9DhR7JQInSoRIUtl/I9Fz1l9alPn17153gNCcwqz/EtSDuVodEX0/+iIl4E9eaz9mNQX1DFAZ9q9t+xvI43tPYpbSOTbjmJ1IfRqZOeP2hnb/xyWD6ucWzM0fyKQx2XOpTkfRczHlnMtZGYgnXRcMWPaihs6ZpNYMKTYF0kOy2NJpHZ+w/32NcVXNsWYk0rE6tlb9CHJX+vYGnnblmJnkY6ee1ApvFv/cac/hj3Uh14Jkli38YFStXrr2TQa5TQPjPzzto3KPbWrZdsfF4KPNFR/+Mmrwp71sabLLfW23si1YabiWCgzwQqKrxOqHGCHHCPEDSlyA==" NumCert="20001000000300022759" Cert="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" FechaExp="2020-05-15T22:22:02-05:00" CveRetenc="26" xmlns:retenciones="http://www.sat.gob.mx/esquemas/retencionpago/1">
+	<retenciones:Emisor RFCEmisor="MSE061107IA8" NomDenRazSocE="MEDICOS Y CONFERENCISTAS ASOCIADOS SA DE CV" />
+	<retenciones:Receptor Nacionalidad="Nacional">
+		<retenciones:Nacional RFCRecep="YEGR970925CD1" NomDenRazSocR="CECOBANK" CURPR="YEGR970925HDFRNV05" />
+	</retenciones:Receptor>
+	<retenciones:Periodo MesIni="6" MesFin="7" Ejerc="2019" />
+	<retenciones:Totales montoTotOperacion="230.50" montoTotGrav="100.00" montoTotExent="0.00" montoTotRet="100.00">
+		<retenciones:ImpRetenidos BaseRet="179.51" Impuesto="01" montoRet="30.00" TipoPagoRet="Pago provisional" />
+		<retenciones:ImpRetenidos BaseRet="42.50" Impuesto="02" montoRet="21.25" TipoPagoRet="Pago definitivo" />
+	</retenciones:Totales>
+	<retenciones:Complemento>
+		<plataformasTecnologicas:ServiciosPlataformasTecnologicas Version="1.0" Periodicidad="01" NumServ="2" MonTotServSIVA="100.00" TotalIVATrasladado="85.00" TotalIVARetenido="21.25" TotalISRRetenido="30.00" DifIVAEntregadoPrestServ="21.250" MonTotalporUsoPlataforma="10.00" MonTotalContribucionGubernamental="10.00">
+			<plataformasTecnologicas:Servicios>
+				<plataformasTecnologicas:DetallesDelServicio FormaPagoServ="01" TipoDeServ="02" SubTipServ="03" RFCTerceroAutorizado="YEGR970925CD1" FechaServ="2020-04-20" PrecioServSinIVA="50.99">
+					<plataformasTecnologicas:ImpuestosTrasladadosdelServicio Base="123.15" Impuesto="01" TipoFactor="Tasa" TasaCuota="0.160000" Importe="14.16" />
+					<plataformasTecnologicas:ImpuestosTrasladadosdelServicio Base="123.15" Impuesto="01" TipoFactor="Tasa" TasaCuota="0.160000" Importe="14.16" />
+					<plataformasTecnologicas:ImpuestosTrasladadosdelServicio Base="123.15" Impuesto="01" TipoFactor="Tasa" TasaCuota="0.160000" Importe="14.18" />
+					<plataformasTecnologicas:ContribucionGubernamental ImpContrib="123.15" EntidadDondePagaLaContribucion="02" />
+					<plataformasTecnologicas:ComisionDelServicio Base="1234.15" Porcentaje="0.16" Importe="122.15" />
+				</plataformasTecnologicas:DetallesDelServicio>
+				<plataformasTecnologicas:DetallesDelServicio FormaPagoServ="02" TipoDeServ="02" SubTipServ="03" RFCTerceroAutorizado="YEGR970925CD1" FechaServ="2020-04-20" PrecioServSinIVA="49.01">
+					<plataformasTecnologicas:ImpuestosTrasladadosdelServicio Base="123.15" Impuesto="01" TipoFactor="Tasa" TasaCuota="0.160000" Importe="14.16" />
+					<plataformasTecnologicas:ImpuestosTrasladadosdelServicio Base="123.15" Impuesto="01" TipoFactor="Tasa" TasaCuota="0.160000" Importe="14.16" />
+					<plataformasTecnologicas:ImpuestosTrasladadosdelServicio Base="123.15" Impuesto="01" TipoFactor="Tasa" TasaCuota="0.160000" Importe="14.18" />
+					<plataformasTecnologicas:ContribucionGubernamental ImpContrib="123.15" EntidadDondePagaLaContribucion="02" />
+					<plataformasTecnologicas:ComisionDelServicio Base="1234.15" Porcentaje="0.16" Importe="122.15" />
+				</plataformasTecnologicas:DetallesDelServicio>
+			</plataformasTecnologicas:Servicios>
+		</plataformasTecnologicas:ServiciosPlataformasTecnologicas>
+	</retenciones:Complemento>
+</retenciones:Retenciones>

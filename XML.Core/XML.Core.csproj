@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.1;net48</TargetFrameworks>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>David Hernandez Valencia</Authors>
+    <Company>DHernandez</Company>
+    <Product>Nuget</Product>
+    <Description>Nuget que extrae datos de archivos xml y los convierte a modelos. Actualmente funciona para nóminas, complemento de serviciosplataformastecnologicas, lecutra de xsd y archivos de visual studio.</Description>
+    <PackageTags>XML</PackageTags>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <Version>1.0.0.2</Version>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageId>XML.Core</PackageId>
+    <PackageLicenseFile>LICENCIA.txt</PackageLicenseFile>
+    <AssemblyName>XML.Core</AssemblyName>
+    <AssemblyVersion>1.0.0.2</AssemblyVersion>
+    <FileVersion>1.0.0.2</FileVersion>
+    <RepositoryUrl>https://github.com/Dave-dei/XML.Core</RepositoryUrl>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>C:\Nuget\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.1|AnyCPU'">
+    <OutputPath>C:\Nuget\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="LICENCIA.txt" />
+    <None Include="LICENCIA.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  
+ 
+
+</Project>

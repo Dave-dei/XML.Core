@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>XML.Core</id>
+    <version>1.0.0.2</version>
+    <authors>David Hernandez Valencia</authors>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <license type="file">LICENCIA.txt</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <description>Nuget que extrae datos de archivos xml y los convierte a modelos. Actualmente funciona para nóminas, complemento de serviciosplataformastecnologicas, lecutra de xsd y archivos de visual studio.</description>
+    <tags>XML</tags>
+    <repository url="https://github.com/Dave-dei/XML.Core" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.8" />
+      <group targetFramework=".NETStandard2.1" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\MYTFS\Dave.Nuget\Main\XML.Core\bin\Debug\net48\XML.Core.dll" target="lib\net48\XML.Core.dll" />
+    <file src="C:\Nuget\netstandard2.1\XML.Core.dll" target="lib\netstandard2.1\XML.Core.dll" />
+    <file src="C:\MYTFS\Dave.Nuget\Main\XML.Core\LICENCIA.txt" target="LICENCIA.txt" />
+  </files>
+</package>

@@ -1,0 +1,8 @@
+﻿--------------------------------------------------------------------------->> DHernandez
+Para su implementación validar liga del repositorio. 
+Convierte fácilmente un archivo xml a un modelo (.cs) con toda la información contenida. 
+Actualmente funciona para los siguientes tipos de comprobantes:
+
+1. Nomina
+2. ServiciosPlataformasTecnologicas
+3. Archivos visual studio .csproj del cual se toma información como dependencias contendidas, nugets y archivos config. 

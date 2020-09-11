@@ -1,0 +1,983 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="AdSHBCred">
+    <xs:annotation>
+      <xs:documentation>Estandar de Addenda.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="AdMov" maxOccurs="unbounded" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>Nodo para introducir la información detallada de un bien o servicio amparado en la addenda.</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:attribute name="NumPago" use="required">
+              <xs:annotation>
+                <xs:documentation>Atributo requerido para indicar el número de amortización del crédito en el período</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:pattern value="\d{3}" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="FechaPago" use="required">
+              <xs:annotation>
+                <xs:documentation>Atributo requerido para registrar la fecha en que se realizó el pago</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:pattern value="\d{4}\d{2}\d{2}"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="PagosDeCapital" use="required">
+              <xs:annotation>
+                <xs:documentation>Atributo para indicar cada uno de los pagos de capital que realizó el cliente en el periodo</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:fractionDigits value="2" />
+                  <xs:totalDigits value="11" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="PagosDeInteresesOrdinario" use="required">
+              <xs:annotation>
+                <xs:documentation>Atributo para indicar cada uno de los pagos de intereses  ordinarios que realizó el cliente en el periodo</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:fractionDigits value="2" />
+                  <xs:totalDigits value="11" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="PagosDeInteresesMoratorios" use="optional">
+              <xs:annotation>
+                <xs:documentation>Atributo para indicar cada uno de los intereses Moratorios </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:fractionDigits value="2" />
+                  <xs:totalDigits value="11" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="PagoDeComisionPorApertura" use="required">
+              <xs:annotation>
+                <xs:documentation>Pago de Comision de Apertura</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:fractionDigits value="2" />
+                  <xs:totalDigits value="12" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="PagosDeIVA" use="required">
+              <xs:annotation>
+                <xs:documentation>Atributo para indicar la suma de cada uno de los pagos de IVA que realizó el cliente en el período</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:fractionDigits value="2" />
+                  <xs:totalDigits value="11" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="PagosTotales" use="required">
+              <xs:annotation>
+                <xs:documentation>Atributo para indicar el monto total de cada pago que el cliente realizó en el periodo</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:fractionDigits value="2" />
+                  <xs:totalDigits value="11" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="Observacion" use="required">
+              <xs:annotation>
+                <xs:documentation>Atributo para indicar comentario sobre el periodo de pago</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:minLength value="1"/>
+                  <xs:maxLength value="8"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="TotalPagosDeCapital" use="required">
+              <xs:annotation>
+                <xs:documentation>Atributo para indicar la suma de todos los pagos de capital que realizó el cliente en el periodo</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:fractionDigits value="2" />
+                  <xs:totalDigits value="11" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="TotalPagosDeInteresesOrdinarios" use="required">
+              <xs:annotation>
+                <xs:documentation>Atributo para indicar la suma de todos los pagos de intereses ordinarios de los pagos o movimientos que realizó el cliente en el periodo.</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:fractionDigits value="2" />
+                  <xs:totalDigits value="11" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="TotalPagosDeInteresesMoratorios" use="required">
+              <xs:annotation>
+                <xs:documentation>Atributo para indicar la suma de todos los pagos de intereses ordinarios de los pagos o movimientos que realizó el cliente en el periodo</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:fractionDigits value="2" />
+                  <xs:totalDigits value="11" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="TotalPagoDeComisionPorApertura" use="required">
+              <xs:annotation>
+                <xs:documentation>Atributo para indicar la suma de todos los pagos de seguros y otros de los pagos o movimientos que realizó el cliente en el periodo</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:fractionDigits value="2" />
+                  <xs:totalDigits value="11" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="TotalPagosDeIVA" use="required">
+              <xs:annotation>
+                <xs:documentation>Atributo para indicar la suma de todos los pagos de IVA de los pagos o movimientos que realizó el cliente en el periodo</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:fractionDigits value="2" />
+                  <xs:totalDigits value="11" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="TotalPagosDelCliente" use="required">
+              <xs:annotation>
+                <xs:documentation>Atributo para indicar la suma de todos los pagos de todos los conceptos de pagos o movimientos que realizó el cliente en el periodo</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:whiteSpace value="collapse" />
+                  <xs:fractionDigits value="2" />
+                  <xs:totalDigits value="11" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="Mail" use="required">
+        <xs:annotation>
+          <xs:documentation>Dirección de e-mail</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+            <xs:minLength value="1"/>
+            <xs:maxLength value="60"/>
+            <xs:pattern value="[^@]+@[^\.]+\..+" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="CIF" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido para indicar el número de cliente (CIF Number) del producto bancario.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:whiteSpace value="collapse" />
+            <xs:pattern value="\d{10}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="NumeroDeCuenta" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido para indicar el número de cuenta del crédito</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:whiteSpace value="collapse" />
+            <xs:pattern value="\d{14}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="DireccionSucursal" use="optional">
+        <xs:annotation>
+          <xs:documentation>Atributo opcional para indicar el la dirección de la sucursal</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+            <xs:maxLength value="65"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="FechaDeCorte" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido para indicar el la fecha en que corta el producto o sea, la fecha de la información con la que se elabora el estado de cuenta</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+            <xs:pattern value="\d{4}\d{2}\d{2}"></xs:pattern>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="Plaza" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido para indicar la plaza donde se encuentra la sucursal</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+            <xs:minLength value="1"/>
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="PeriodoReportado" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido para indicar periodo de los cargos o abonos al instrumento bancario.  Cumpliendo con el estándar ISO 8601 con el siguiente formato AAAAMMDD-AAAAMMDD.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+            <xs:pattern value="\d{8}-\d{8}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="Sucursal" use="optional">
+        <xs:annotation>
+          <xs:documentation>Atributo opcional para indicar la sucursal a la cual pertenece el cuentahabiente.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+            <xs:minLength value="1"/>
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="ResumenDeMovimientos" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo para indicar el saldo al corte del crédito</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+            <xs:minLength value="1"/>
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="Producto" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido para indicar el nombre del producto de crédito. El catálogo de productos es: Crédito Simple Operacional, Crédito Simple Refaccionario, Línea de Crédito Operacional o Línea de Crédito Refaccionaria</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+            <xs:maxLength value="30" />
+            <xs:minLength value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="Moneda" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido para indicar la moneda del producto de crédito. El catálogo es: Pesos o Dólares</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+            <xs:maxLength value="8" />
+            <xs:minLength value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="TipoDeTasa" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo para indicar el tipo de tasa que tiene el crédito. El catálogo de los posibles valores es: Fija o Variable</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+            <xs:maxLength value="10" />
+            <xs:minLength value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="TasaAnualOrdinaria" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido para indicar la tasa de interés anual ordinaria</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+            <xs:pattern value="\d{1,3}(\.\d{1,3})?[%]"/>
+            <xs:minLength value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="TasaAnualMoratoria" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido para indicar la tasa de interés anual moratoria</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+            <xs:pattern value="\d{1,3}(\.\d{1,3})?[%]"/>
+            <xs:minLength value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="FechaLimiteDePago" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido para indicar la fecha límite o de vencimiento para el próximo pago del crédito</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+            <xs:pattern value="\d{4}\d{2}\d{2}"></xs:pattern>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="LimiteOMontoInicial" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido para indicar el límite de crédito del producto o el monto inicial del crédito</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:whiteSpace value="collapse" />
+            <xs:fractionDigits value="2" />
+            <xs:totalDigits value="12" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="MontoAPagar" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido para indicar el monto a pagar en la fecha de vencimiento para estar al corriente</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:whiteSpace value="collapse" />
+            <xs:fractionDigits value="2" />
+            <xs:totalDigits value="12" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="SaldoAlInicioDelMes" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo para indicar el saldo al inicio del mes</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:whiteSpace value="collapse" />
+            <xs:fractionDigits value="2" />
+            <xs:totalDigits value="12" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="FechaDeInicioDelPeriodo" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo para indicar la fecha de inicio del periodo</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+            <xs:pattern value="\d{4}\d{2}\d{2}"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="DesembolsoDelCapital" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo para indicar la suma de todos los pagos de capital que se realizó el cliente en el periodo</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:whiteSpace value="collapse" />
+            <xs:fractionDigits value="2" />
+            <xs:totalDigits value="12" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="PagoDeComisionPorApertura" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo para indicar la Comisión de Apertura que realizó el cliente en el periodo</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:whiteSpace value="collapse" />
+            <xs:fractionDigits value="2" />
+            <xs:totalDigits value="10" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="PagoDeIVAPorComisionPorApertura" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo para indicarla suma de todos los pagos de IVA que realizó el cliente en el mes por la Comisión de Apertura</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:whiteSpace value="collapse" />
+            <xs:fractionDigits value="2" />
+            <xs:totalDigits value="10" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="PagoDeCapital" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo para indicar la suma de todos los pagos de capital que se realizó el cliente en el periodo</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:whiteSpace value="collapse" />
+            <xs:fractionDigits value="2" />
+            <xs:totalDigits value="12" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="PagosDeIntereses" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo para indicar la suma de todos los pagos de intereses que realizó el cliente en el periodo (ordinarios y moratorios)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:whiteSpace value="collapse" />
+            <xs:fractionDigits value="2" />
+            <xs:totalDigits value="10" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="PagoDeInteresMoratorio" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo para indicar la suma de todos los pagos de intereses moratorios que realizó el cliente en el periodo (ordinarios y moratorios)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:whiteSpace value="collapse" />
+            <xs:fractionDigits value="2" />
+            <xs:totalDigits value="10" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="OtrosPagos" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo para indicar la suma de todos los pagos otros que realizó el cliente en el periodo</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:whiteSpace value="collapse" />
+            <xs:fractionDigits value="2" />
+            <xs:totalDigits value="10" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="SaldoAlFinDeMes" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo para indicar el Saldo al final del mes</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:whiteSpace value="collapse" />
+            <xs:fractionDigits value="2" />
+            <xs:totalDigits value="12" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="InteresesDevengadosEnElMes" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo para indicar el monto de intereses devengado en el mes que se reporta</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:whiteSpace value="collapse" />
+            <xs:fractionDigits value="2" />
+            <xs:totalDigits value="10" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="MesDelReporteDeSaldo" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo para indicar el mes en el que se está</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+            <xs:maxLength value="10" />
+            <xs:minLength value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="SaldoDeCapitalVigente" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo para indicar el Saldo de Capital que se tiene que  pagar de acuerdo a la tabla de amortización en este mes (Suma de todos los pagos futuros de principal de acuerdo a la tabla de amortización)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:whiteSpace value="collapse" />
+            <xs:fractionDigits value="2" />
+            <xs:totalDigits value="12" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="SaldoDeCapitalExigiblePendienteDePago" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo para indicar el Saldo de Capital atrasado que no se ha pagado  en períodos anteriores</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:whiteSpace value="collapse" />
+            <xs:fractionDigits value="2" />
+            <xs:totalDigits value="12" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="SaldoTotalDeCapital" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo para indicar el Saldo de Capital total</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:whiteSpace value="collapse" />
+            <xs:fractionDigits value="2" />
+            <xs:totalDigits value="12" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="SaldoInteresesOrdinarios" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo para indicar el saldo de los intereses ordinarios que se han devengado que no se han pagado en períodos anteriores hasta la fecha de fin del mes</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:whiteSpace value="collapse" />
+            <xs:fractionDigits value="2" />
+            <xs:totalDigits value="10" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="SaldoInteresesMoratorios" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo para indicar el saldo de los intereses moratorios que no se han pagado hasta el fin de mes</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:whiteSpace value="collapse" />
+            <xs:fractionDigits value="2" />
+            <xs:totalDigits value="10" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="SaldoTotalIntereses" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo para indicar el saldo de los intereses totales al fin del mes</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:whiteSpace value="collapse" />
+            <xs:fractionDigits value="2" />
+            <xs:totalDigits value="10" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="OtrosSaldos" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo para indicar otros saldos de otros conceptos hasta el final del mes</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:whiteSpace value="collapse" />
+            <xs:fractionDigits value="2" />
+            <xs:totalDigits value="10" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="SaldoTotal" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo para indicar el Saldo Total</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:whiteSpace value="collapse" />
+            <xs:fractionDigits value="2" />
+            <xs:totalDigits value="12" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="CAT" use="optional">
+        <xs:annotation>
+          <xs:documentation>Atributo para indicar el Costo Anual Total del Crédito</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:whiteSpace value="collapse" />
+            <xs:fractionDigits value="1" />
+            <xs:totalDigits value="4" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="NumPagos" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo para indicar el número de pagos del crédito que ha realizado el cliente., el plazo original y el número de pagos restantes</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:whiteSpace value="collapse" />
+            <xs:pattern value="\d{3}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="Plazo" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo para indicar el plazo original en meses</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:whiteSpace value="collapse" />
+            <xs:pattern value="\d{3}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="Restantes" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo para indicar el número de pagos restantes</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:whiteSpace value="collapse" />
+            <xs:pattern value="\d{3}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="InteresesMoratoriosPorPagar" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo para indicar monto de intereses moratorios por pagar</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:whiteSpace value="collapse" />
+            <xs:fractionDigits value="2" />
+            <xs:totalDigits value="10" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="InteresesOrdinariosPorPagar" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo para indicar monto de intereses ordinarios por pagar</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:whiteSpace value="collapse" />
+            <xs:fractionDigits value="2" />
+            <xs:totalDigits value="10" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="CapitalPorPagar" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo para indicar el monto de Capital por Pagar</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:whiteSpace value="collapse" />
+            <xs:fractionDigits value="2" />
+            <xs:totalDigits value="12" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="CalculoMontoBaseInteresMoratorio" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo para indicar el monto base de cálculo para los intereses moratorios</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:whiteSpace value="collapse" />
+            <xs:fractionDigits value="2" />
+            <xs:totalDigits value="12" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="CalculoMontoBaseInteresOrdinario" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo para indicar el monto base de cálculo para los intereses moratorios</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:whiteSpace value="collapse" />
+            <xs:fractionDigits value="2" />
+            <xs:totalDigits value="12" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="CargosObjetadosEnElPeriodoAnterior" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo para indicar el monto de los cargos objetados por el cliente en el período anterior</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:whiteSpace value="collapse" />
+            <xs:fractionDigits value="2" />
+            <xs:totalDigits value="12" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="PagoTotalDeComisionesConIVA" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo para indicar el monto total de las comisiones incluyendo el IVA</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:whiteSpace value="collapse" />
+            <xs:fractionDigits value="2" />
+            <xs:totalDigits value="12" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="calle" use="optional">
+        <xs:annotation>
+          <xs:documentation>Este atributo opcional sirve para precisar la avenida, calle, camino o carretera donde se da la ubicación.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:whiteSpace value="collapse"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="noExterior" use="optional">
+        <xs:annotation>
+          <xs:documentation>Este atributo opcional sirve para expresar el número particular en donde se da la ubicación sobre una calle dada.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:whiteSpace value="collapse"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="noInterior" use="optional">
+        <xs:annotation>
+          <xs:documentation>Este atributo opcional sirve para expresar información adicional para especificar la ubicación cuando calle y número exterior (noExterior) no resulten suficientes para determinar la ubicación de forma precisa.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:whiteSpace value="collapse"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="colonia" use="optional">
+        <xs:annotation>
+          <xs:documentation>Este atributo opcional sirve para precisar la colonia en donde se da la ubicación cuando se desea ser más específico en casos de ubicaciones urbanas.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:whiteSpace value="collapse"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="localidad" use="optional">
+        <xs:annotation>
+          <xs:documentation>Atributo opcional que sirve para precisar la ciudad o población donde se da la ubicación.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:whiteSpace value="collapse"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="referencia" use="optional">
+        <xs:annotation>
+          <xs:documentation>Atributo opcional para expresar una referencia de ubicación adicional.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:whiteSpace value="collapse"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="municipio" use="optional">
+        <xs:annotation>
+          <xs:documentation>Atributo opcional que sirve para precisar el municipio o delegación (en el caso del Distrito Federal) en donde se da la ubicación.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:whiteSpace value="collapse"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="estado" use="optional">
+        <xs:annotation>
+          <xs:documentation>Atributo opcional que sirve para precisar el estado o entidad federativa donde se da la ubicación.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:whiteSpace value="collapse"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="pais" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido que sirve para precisar el país donde se da la ubicación.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:whiteSpace value="collapse"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="codigoPostal" use="optional">
+        <xs:annotation>
+          <xs:documentation>Atributo opcional que sirve para asentar el código postal en donde se da la ubicación.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="calleReceptor" use="required">
+        <xs:annotation>
+          <xs:documentation>Este atributo requerido sirve para precisar la avenida, calle, camino o carretera donde se da la ubicación.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:whiteSpace value="collapse"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="noExteriorReceptor" use="optional">
+        <xs:annotation>
+          <xs:documentation>Este atributo opcional sirve para expresar el número particular en donde se da la ubicación sobre una calle dada.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:whiteSpace value="collapse"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="noInteriorReceptor" use="optional">
+        <xs:annotation>
+          <xs:documentation>Este atributo opcional sirve para expresar información adicional para especificar la ubicación cuando calle y número exterior (noExterior) no resulten suficientes para determinar la ubicación de forma precisa.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:whiteSpace value="collapse"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="coloniaReceptor" use="optional">
+        <xs:annotation>
+          <xs:documentation>Este atributo opcional sirve para precisar la colonia en donde se da la ubicación cuando se desea ser más específico en casos de ubicaciones urbanas.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:whiteSpace value="collapse"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="localidadReceptor" use="optional">
+        <xs:annotation>
+          <xs:documentation>Atributo opcional que sirve para precisar la ciudad o población donde se da la ubicación.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:whiteSpace value="collapse"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="referenciaReceptor" use="optional">
+        <xs:annotation>
+          <xs:documentation>Atributo opcional para expresar una referencia de ubicación adicional.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse"/>
+            <xs:minLength value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="municipioReceptor" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido que sirve para precisar el municipio o delegación (en el caso del Distrito Federal) en donde se da la ubicación.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:whiteSpace value="collapse"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="estadoReceptor" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido que sirve para precisar el estado o entidad federativa donde se da la ubicación.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:whiteSpace value="collapse"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="paisReceptor" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido que sirve para precisar el país donde se da la ubicación.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:whiteSpace value="collapse"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="codigoPostalReceptor" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido que sirve para asentar el código postal en donde se da la ubicación.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse"/>
+            <xs:length value="5"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

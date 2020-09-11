@@ -1,0 +1,8 @@
+
+--------------------------------------------------------------------------->> DHernandez
+
+Este software es de uso libre para los desarrolladores, 
+con esta licencia se otorgan permisos para su implementación sin restricciones.
+
+A su vez, este software se proporciona tal cual "sin garantias de ningun tipo". En ningun caso el autor
+(David Hernandez Valencia) será responsable por cualquier reclamación, daño u otra responsabilidad. 
